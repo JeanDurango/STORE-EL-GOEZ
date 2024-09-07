@@ -1,0 +1,557 @@
+/* Importación de la fuente Rubik desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Variables de colores globales */
+:root {
+    --clr-main: #4b33a8; /* Color principal */
+    --clr-main-light: #785ce9; /* Color principal claro */
+    --clr-white: #ececec; /* Color blanco */
+    --clr-gray: #e2e2e2; /* Color gris */
+    --clr-red: #961818; /* Color rojo */
+}
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Estilos globales para títulos, párrafos, enlaces, inputs, textarea y listas */
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos globales para listas */
+ul {
+    list-style-type: none;
+}
+
+/* Estilos globales para enlaces */
+a {
+    text-decoration: none;
+}
+
+/* Estilos para el contenedor principal (vista general) */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--clr-main);
+}
+
+/* Estilos para el contenedor lateral (vista general) */
+aside {
+    padding: 2rem;
+    padding-right: 0;
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilos para el logo (vista general) */
+.logo {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+/* Estilos para el menú (vista general) */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* Estilos para los botones del menú (vista general) */
+.boton-menu {
+    background-color: transparent;
+    border: 0;
+    color: var(--clr-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: .85rem;
+    width: 100%;
+}
+
+/* Estilos para los botones del menú activos (vista general) */
+.boton-menu.active {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+
+/* Estilos para los pseudo-elementos antes de los botones del menú activos (vista general) */
+.boton-menu.active::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+/* Estilos para los pseudo-elementos después de los botones del menú activos (vista general) */
+.boton-menu.active::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+/* Estilos para los íconos de los botones del menú (vista general) */
+.boton-menu > i.bi-hand-index-thumb-fill,
+.boton-menu > i.bi-hand-index-thumb {
+    transform: rotateZ(90deg);
+}
+
+/* Estilos para el botón del carrito (vista general) */
+.boton-carrito {
+    margin-top: 2rem;
+}
+
+/* Estilos para el numerito del carrito (vista general) */
+.numerito {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+/* Estilos para el numerito del carrito activo (vista general) */
+.boton-carrito.active .numerito {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+/* Estilos para el texto del pie de página (vista general) */
+.texto-footer {
+    color: var(--clr-main-light);
+    font-size: .85rem;
+}
+
+/* Estilos para el elemento principal (vista general) */
+main {
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+/* Estilos para el título principal (vista general) */
+.titulo-principal {
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+
+/* Estilos para el contenedor de productos (vista de productos) */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* Estilos para la imagen del producto (vista de productos) */
+.producto-imagen {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+/* Estilos para los detalles del producto (vista de productos) */
+.producto-detalles {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+/* Estilos para el título del producto (vista de productos) */
+.producto-titulo {
+    font-size: 1rem;
+}
+
+/* Estilos para el fondo del cuerpo (vista general) */
+body {
+    background: url('./img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: var(--clr-secondary);
+}
+
+/* Estilos para el contenedor de login */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el logo de login */
+.login-logo {
+    margin-bottom: 2rem;
+}
+
+/* Estilos para el logo dentro del contenedor de login (vista de login ) */
+.login-logo .logo {
+    max-width: 150px;
+}
+
+/* Estilos para el formulario de login  (vista de login) */
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Estilos para el título del formulario de login  (vista de login ) */
+.login-title {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--clr-main);
+}
+
+/* Estilos para los campos del formulario de login (vista de login) */
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Estilos para las etiquetas de los campos del formulario de login  (vista de login ) */
+.login-field label {
+    font-weight: bold;
+}
+
+/* Estilos para los inputs de los campos del formulario de login  (vista de login ) */
+.login-field input {
+    padding: 0.5rem;
+    border: 1px solid var(--clr-gray);
+    border-radius: 0.5rem;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+}
+
+/* Estilos para los enlaces del formulario de login (vista de login) */
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Estilos para los enlaces del formulario de login  (vista de login ) */
+.login-link {
+    color: var(--clr-main);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos para los enlaces del formulario de login al pasar el maus (vista de login) */
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de agregar producto (vista de productos) */
+.producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color .2s, color .2s;
+}
+
+/* Estilos para el botón de agregar producto al pasar el ratón (vista de productos) */
+.producto-agregar:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+/* Estilos para el botón de login (vista de login) */
+.boton-login {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color .2s, color .2s;
+}
+
+/* Estilos para el botón de login al pasar el ratón (vista de login) */
+.boton-login:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+/* Estilos para el contenedor del carrito (vista del carrito) */
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilos para el carrito vacío y el carrito comprado (vista del carrito) */
+.carrito-vacio,
+.carrito-comprado {
+    color: var(--clr-main);
+}
+
+/* Estilos para los productos del carrito (vista del carrito) */
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Estilos para cada producto del carrito (vista del carrito) */
+.carrito-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+}
+
+/* Estilos para la imagen del producto en el carrito (vista del carrito) */
+.carrito-producto-imagen {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+/* Estilos para el texto pequeño en el producto del carrito (vista del carrito) */
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+/* Estilos para el botón de eliminar producto del carrito (vista del carrito) */
+.carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+}
+
+/* Estilos para las acciones del carrito (vista del carrito) */
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para el botón de vaciar el carrito (vista del carrito) */
+.carrito-acciones-vaciar {
+    border: 0;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Estilos para las acciones del carrito a la derecha (vista del carrito) */
+.carrito-acciones-derecha {
+    display: flex;
+}
+
+/* Estilos para el total de las acciones del carrito (vista del carrito) */
+.carrito-acciones-total {
+    display: flex;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+
+/* Estilos para el botón de comprar en el carrito (vista del carrito) */
+.carrito-acciones-comprar {
+    border: 0;
+    background-color: var(--clr-main);
+    padding: 1rem;
+    color: var(--clr-white);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* Estilos para el encabezado móvil (vista móvil) */
+.header-mobile {
+    display: none;
+}
+
+/* Estilos para el botón de cerrar menú (vista móvil) */
+.close-menu {
+    display: none;
+}
+
+/* Estilos para elementos deshabilitados (vista general) */
+.disabled {
+    display: none;
+}
+
+/* Media queries para pantallas pequeñas */
+@media screen and (max-width: 850px) {
+    /* Ajustes para el contenedor de productos (vista de productos) */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 675px) {
+    /* Ajustes para el contenedor de productos (vista de productos) */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media screen and (max-width: 600px) {
+    /* Ajustes para el contenedor principal (vista general) */
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Ajustes para el contenedor lateral (vista general) */
+    aside {
+        position: fixed;
+        z-index: 9;
+        background-color: var(--clr-main);
+        left: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: .2s;
+    }
+
+    /* Ajustes para el contenedor lateral visible (vista general) */
+    .aside-visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Ajustes para los pseudo-elementos antes y después de los botones del menú activos (vista general) */
+    .boton-menu.active::before,
+    .boton-menu.active::after {
+        display: none;
+    }
+
+    /* Ajustes para el elemento principal (vista general) */
+    main {
+        margin: 1rem;
+        margin-top: 0;
+        padding: 2rem;
+    }
+
+    /* Ajustes para el contenedor de productos (vista de productos) */
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Ajustes para el encabezado móvil (vista móvil) */
+    .header-mobile {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ajustes para el logo en el encabezado móvil (vista móvil) */
+    .header-mobile .logo {
+        color: var(--clr-gray);
+    }
+
+    /* Ajustes para los botones de abrir y cerrar menú (vista móvil) */
+    .open-menu, .close-menu {
+        background-color: transparent;
+        color: var(--clr-gray);
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Ajustes para el botón de cerrar menú (vista móvil) */
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Ajustes para los productos del carrito (vista del carrito) */
+    .carrito-producto {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: .5rem;
+    }
+
+    .carrito-producto-subtotal {
+        display: none;
+    }
+
+    .carrito-acciones {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    
+
+}
+
+@media screen and (max-width: 400px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
