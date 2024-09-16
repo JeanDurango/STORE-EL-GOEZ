@@ -65,19 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
     });
-
-    // Redirigir al login.html cuando se haga clic en el botón de "Iniciar Sesión"
-    document.getElementById('login-button').addEventListener('click', function() {
-        window.location.href = 'login.html';
-    });
-
-    // Redirigir al registro.html cuando se haga clic en el botón de "Registrarse" en login.html
-    const registerButton = document.getElementById('register-button');
-    if (registerButton) {
-        registerButton.addEventListener('click', function() {
-            window.location.href = 'registro.html';
-        });
-    }
 });
 
 // Función para actualizar los eventos de los botones de agregar producto
@@ -87,6 +74,7 @@ function actualizarBotonesAgregar() {
         boton.addEventListener("click", agregarAlCarrito);
     });
 }
+
 
 // Inicializa el array de productos en el carrito
 let productosEnCarrito;

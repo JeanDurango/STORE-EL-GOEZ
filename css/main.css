@@ -202,90 +202,6 @@ body {
     color: var(--clr-secondary);
 }
 
-/* Estilos para el contenedor de login */
-.login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para el logo de login */
-.login-logo {
-    margin-bottom: 2rem;
-}
-
-/* Estilos para el logo dentro del contenedor de login (vista de login ) */
-.login-logo .logo {
-    max-width: 150px;
-}
-
-/* Estilos para el formulario de login  (vista de login) */
-.login-form {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Estilos para el título del formulario de login  (vista de login ) */
-.login-title {
-    margin-bottom: 1rem;
-    text-align: center;
-    color: var(--clr-main);
-}
-
-/* Estilos para los campos del formulario de login (vista de login) */
-.login-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-/* Estilos para las etiquetas de los campos del formulario de login  (vista de login ) */
-.login-field label {
-    font-weight: bold;
-}
-
-/* Estilos para los inputs de los campos del formulario de login  (vista de login ) */
-.login-field input {
-    padding: 0.5rem;
-    border: 1px solid var(--clr-gray);
-    border-radius: 0.5rem;
-    background-color: var(--clr-secondary);
-    color: var(--clr-dark);
-}
-
-/* Estilos para los enlaces del formulario de login (vista de login) */
-.login-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-/* Estilos para los enlaces del formulario de login  (vista de login ) */
-.login-link {
-    color: var(--clr-main);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Estilos para los enlaces del formulario de login al pasar el maus (vista de login) */
-.login-link:hover {
-    text-decoration: underline;
-}
-
 /* Estilos para el botón de agregar producto (vista de productos) */
 .producto-agregar {
     border: 0;
@@ -297,6 +213,8 @@ body {
     cursor: pointer;
     border: 2px solid var(--clr-white);
     transition: background-color .2s, color .2s;
+    width: 100%;
+    text-align: center;
 }
 
 /* Estilos para el botón de agregar producto al pasar el ratón (vista de productos) */
@@ -305,7 +223,7 @@ body {
     color: var(--clr-white);
 }
 
-/* Estilos para el botón de login (vista de login) */
+/* Estilos para el botón de agregar producto (vista de productos) */
 .boton-login {
     border: 0;
     background-color: var(--clr-white);
@@ -316,14 +234,108 @@ body {
     cursor: pointer;
     border: 2px solid var(--clr-white);
     transition: background-color .2s, color .2s;
+    width: 60%;
+    text-align: center;
 }
 
-/* Estilos para el botón de login al pasar el ratón (vista de login) */
+/* Estilos para el botón de agregar producto al pasar el ratón (vista de productos) */
 .boton-login:hover {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #4b33a8;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.login-card, .registro-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 360px;
+}
+.banner {
+    background-image: url('/api/placeholder/360/180');
+    background-size: cover;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: #101E26;
+}
 
+.banner .logo {
+    width: 80%;
+}
+
+.logo-index {
+    width: 50%;
+}
+    
+.login-form {
+    padding: 20px;
+}
+h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+.input-group {
+    background-color: #f0f8ff;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.btn {
+    flex: 1;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+.btn-login {
+    background-color: #1e3a8a;
+}
+.btn-register {
+    background-color: #1e3a8a;
+}
+.btn:hover {
+    opacity: 0.9;
+}
 /* Estilos para el contenedor del carrito (vista del carrito) */
 .contenedor-carrito {
     display: flex;
