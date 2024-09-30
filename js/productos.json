@@ -149,15 +149,5 @@
             "id": "gorras"
         },
         "precio": 800
-    },
-    {
-        "id": "gorra-04",
-        "titulo": "Gorra 02",
-        "imagen": "./img/gorras/gorra4.jpg",
-        "categoria": {
-            "nombre": "Gorras",
-            "id": "gorras"
-        },
-        "precio": 200
     }
 ]
